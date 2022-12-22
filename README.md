@@ -25,7 +25,7 @@ routes/ - api
 app.js - runnig
 ```
 
-## Start
+## Start local
 
 ```terminal
 $ cd time-track  // go to project folder
