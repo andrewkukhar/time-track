@@ -25,10 +25,7 @@ routes/ - api
 app.js - runnig
 ```
 
-## Client-side 
-```
-
-### Start
+## Start
 
 ```terminal
 $ cd time-track  // go to project folder
