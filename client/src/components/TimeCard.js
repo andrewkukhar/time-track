@@ -1,6 +1,6 @@
 export const TimeCard = ({ time }) => {
     return (
-        <div>
+        <div className="time-card">
             <h2>Time</h2>
             <p rel="noopener noreferrer">Project Name:&nbsp;
                 {time.project}

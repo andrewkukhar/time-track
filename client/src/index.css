@@ -1,6 +1,5 @@
 @import "~materialize-css/dist/css/materialize.min.css";
 
-
 input.yellow-input {
     border-bottom: 1px solid #fff!important;
     box-shadow: 0 1px 0 0 #fff!important;
@@ -25,4 +24,17 @@ input.yellow-input:focus {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+}
+.times-list,
+.time-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.times-list li {
+  padding: 0.5rem;
+}
+.times-link {
+  padding: 1rem;
 }
