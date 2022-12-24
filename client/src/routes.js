@@ -24,9 +24,9 @@ export const useRoutes = isAuthenticated => {
         <div>
             <Routes>
                 <Route path="/" element={<AuthPage />} />
-                <Route path="/" element={<Navigate replace to="/" />} />
                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="/" element={<Navigate replace to="/" />} />
             </Routes>
         </div>
     )

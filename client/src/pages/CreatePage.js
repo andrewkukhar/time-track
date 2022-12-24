@@ -20,9 +20,9 @@ export const CreatePage = () => {
     const createTime = async () => {
         if (createTime) {
             try {
-                const data = await request('/api/times/create', 
-                'POST', 
-                { project: project, hours: hours, description: description }, {
+                const data = await request('/api/times/create',
+                    'POST',
+                    { project: project, hours: hours, description: description }, {
                     Authorization: `Bearer ${auth.token}`
                 })
                 history(`/detail/${data.time._id}`)
@@ -73,6 +73,7 @@ export const CreatePage = () => {
                 </div>
                 <button
                     onClick={createTime}
+                    className="waves-effect waves-light btn blue-grey lighten-4 black-text"
                 >Create Time</button>
             </div>
         </div>

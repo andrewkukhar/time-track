@@ -1,11 +1,13 @@
 import { useEffect } from "react"
 import { useContext } from "react"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../context/AuthContext.js"
 import { useHttp } from "../hooks/http.hook.js"
 import { useMessage } from "../hooks/message.hook.js"
 
 export const LoginPage = () => {
+    const history = useNavigate()
     const auth = useContext(AuthContext)
     const message = useMessage()
     const { loading, request, error, clearError } = useHttp()
@@ -33,6 +35,7 @@ export const LoginPage = () => {
         try {
             const data = await request('/api/login', 'POST', { ...form })
             auth.login(data.token, data.userId)
+            history(`/`)
         } catch (e) { }
     }
 
