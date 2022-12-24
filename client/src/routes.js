@@ -3,6 +3,8 @@ import { AuthPage } from './pages/AuthPage.js'
 import { TimesPage } from './pages/TimesPage.js'
 import { CreatePage } from './pages/CreatePage.js'
 import { DetailPage } from './pages/DetailPage.js'
+import { SignupPage } from './pages/SignupPage.js'
+import { LoginPage } from './pages/LoginPage.js'
 import 'materialize-css'
 
 export const useRoutes = isAuthenticated => {
@@ -23,6 +25,8 @@ export const useRoutes = isAuthenticated => {
             <Routes>
                 <Route path="/" element={<AuthPage />} />
                 <Route path="/" element={<Navigate replace to="/" />} />
+                <Route path="/signup" element={<SignupPage />} />
+                <Route path="/login" element={<LoginPage />} />
             </Routes>
         </div>
     )

@@ -22,7 +22,7 @@ router.post("/signup",
             if (!errors.isEmpty()) {
                 return res.status(400).json({
                     errors: errors.array(),
-                    message: 'Somedata during registration'
+                    message: 'Some data wrong during registration, please check your email or password'
                 })
             }
             const { email, password } = req.body
@@ -36,7 +36,7 @@ router.post("/signup",
 
             await user.save()
 
-            res.status(201).json({ message: 'User is created' })
+            res.status(201).json({ message: `User  with ${email} is created` })
 
         } catch (e) {
             res.status(500).json({ message: 'Something is not right, try again' })
@@ -47,7 +47,7 @@ router.post("/signup",
 
 router.post("/login",
     [
-        check('email', 'Enter correct email').normalizeEmail().isEmail(),
+        check('email', 'Enter correct email').isEmail(),
         check('password', 'Enter password').exists()
     ],
     async (req, res) => {
@@ -57,7 +57,7 @@ router.post("/login",
             if (!errors.isEmpty()) {
                 return res.status(400).json({
                     errors: errors.array(),
-                    message: 'Somedata during login'
+                    message: 'Some data wrong during login'
                 })
             }
             const { email, password } = req.body
@@ -65,7 +65,7 @@ router.post("/login",
 
             const user = await User.findOne({ email })
             if (!user) {
-                return res.status(400).json({ message: 'User is didn\'t find' })
+                return res.status(400).json({ message: 'User is not found' })
             }
 
             const isMatch = await bcrypt.compare(password, user.password)

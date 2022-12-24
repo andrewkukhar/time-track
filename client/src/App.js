@@ -3,6 +3,7 @@ import { useAuth } from './hooks/auth.hook.js';
 import { useRoutes } from './routes.js'
 import { AuthContext } from './context/AuthContext.js';
 import { Navbar } from './components/Navbar.js';
+import { NavbarGuest } from './components/NavbarGuest.js';
 import { Loader } from './components/Loader.js';
 import 'materialize-css'
 
@@ -20,7 +21,7 @@ function App() {
       token, login, logout, userId, isAuthenticated
     }}>
       <Router basename={process.env.PUBLIC_URL}>
-        {isAuthenticated && <Navbar />}
+        {isAuthenticated ? <Navbar /> : <NavbarGuest />}
         <div className="container">
           {routes}
         </div>

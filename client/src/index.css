@@ -1,11 +1,19 @@
 @import "~materialize-css/dist/css/materialize.min.css";
 
+.cont-card {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  max-width: 400px;
+  width: 100%;
+}
+
 input.yellow-input {
     border-bottom: 1px solid #fff!important;
     box-shadow: 0 1px 0 0 #fff!important;
 }
 input.yellow-input + label {
-    color: #ffffff!important;
+    color: #fbfbfb!important;
 }
 input.yellow-input:focus + label {
     color: #ffeb3b!important;
@@ -19,22 +27,21 @@ input.yellow-input:focus {
   flex-direction: row;
   justify-content: center;
 }
-.page-name {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
 .times-list,
 .time-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  place-items: center;
 }
 .times-list li {
   padding: 0.5rem;
 }
 .times-link {
-  padding: 1rem;
+  margin: 0.5rem;
+}
+.m1 {
+  margin: 1rem;
+}
+.mb {
+  margin-bottom: 1rem;
 }
